@@ -42,9 +42,13 @@ syntax on
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
-set tabstop=2
-" Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set tabstop=4
+" Specifies how many columns to increment/decrement
+set shiftwidth=4
+" Makes sure that tabs are converted to spaces
+set expandtab
+" Show “invisible” characters removed 'eol:¬,nbsp:_'
+set lcs=tab:▸\ ,trail:·
 set list
 " Highlight searches
 set hlsearch
@@ -72,7 +76,10 @@ set title
 set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
-
+" Makes sure that vim doesn't wrap text
+set textwidth=0 
+set wrapmargin=0
+set nowrap
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
